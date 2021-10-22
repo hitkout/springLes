@@ -9,9 +9,8 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml");
-        HelloWorldBean service = (HelloWorldBean) context
-                .getBean("helloWorldBean");
-        service.setName("Hello, world!");
-        System.out.println(service.sayHello());
+        SecondBean service = (SecondBean) context
+                .getBean("secondBean");
+        service.method();
     }
 }

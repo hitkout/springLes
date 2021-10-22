@@ -7,8 +7,16 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <bean id="helloWorldBean"
-          class="ru.osminkin.springprojects.HelloWorldBean">
+    <bean id="firstBean"
+          class="ru.osminkin.springprojects.FirstBean">
+        <property name="name" ref="message"/>
     </bean>
-
+    <bean id="secondBean"
+          class="ru.osminkin.springprojects.SecondBean">
+        <constructor-arg ref="firstBean"/>
+    </bean>
+    <bean id="message"
+          class="java.lang.String">
+        <constructor-arg value="Hello, world!"/>
+    </bean>
 </beans>

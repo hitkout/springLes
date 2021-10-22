@@ -1,16 +1,16 @@
 package ru.osminkin.springprojects;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("helloWorldBean")
-public class HelloWorldBean {
+public class FirstBean {
     private String name;
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String sayHello() {
-        return name;
+    public void sayHello() {
+        System.out.println(name);
     }
 }
